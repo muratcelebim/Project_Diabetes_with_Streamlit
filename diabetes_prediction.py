@@ -52,12 +52,6 @@ Alınan bilgiler ise kısaca şunlar:
 st.write("""Uygulamanın tahmin başarsı (**Accuracy Score**): %76""")
 
 
-
-
-
-
-
-
 st.sidebar.header('User Input Parameters for Diabetes')
 df1 = pd.read_csv("diabetes.csv")
 def user_input_features():

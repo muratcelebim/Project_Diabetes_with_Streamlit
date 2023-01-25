@@ -1,7 +1,3 @@
-################################################
-# End-to-End Diabetes Machine Learning Pipeline II
-################################################
-
 import joblib
 import pandas as pd
 from lightgbm import LGBMClassifier
@@ -237,24 +233,6 @@ if __name__ == "__main__":
 
 
 
-########################### SCORE ###########################
-"""df = pd.read_csv("diabetes.csv")
-X, y = diabetes_data_prep(df)
-base_models(X, y)
-best_models = hyperparameter_optimization(X, y)
-voting_clf = voting_classifier(best_models, X, y)
-joblib.dump(voting_clf, "voting_clf.pkl")
-
-best_models
-
-voting_clf, score = voting_classifier(best_models, X, y)
-score
-
-def sscore():
-    x = score
-    print(x)
-sscore()
-"""
 
 
 
