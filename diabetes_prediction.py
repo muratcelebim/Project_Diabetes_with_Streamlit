@@ -45,7 +45,7 @@ Alınan bilgiler ise kısaca şunlar:
     Soydaki Kişilerin Diyabet Olma İhtimalini Hesaplayan Fonksiyon, Yaş**'dır. Bu bilgiler doğrultusunda bu kişinin 
     diyabet hastası olup olmadığını tamin eden bir model geliştirdim. Uygulama açık değilse sol üstteki ">" 
     işareti ile gösterilen barı açarak tahmin için değerleri seçebilirsiniz. Ardından özeelikleri değiştirerek 
-    sonucunuzun "Prediction" başlığı altındaki "Click for Predict" butonuna basarak görebilirsiniz.
+    sonucunuzun "Prediction" başlığı altından görebilirsiniz.
 """)
 
 
@@ -56,13 +56,13 @@ st.sidebar.header('User Input Parameters for Diabetes')
 df1 = pd.read_csv("diabetes.csv")
 def user_input_features():
     pregnancies = st.sidebar.slider('Pregnancies - Hamilelik Sayısı', 0.00, 17.00, 0.00)
-    glucose = st.sidebar.slider('Glucose - Glikoz Değeri', 80.00, 199.00, 80.00)
+    glucose = st.sidebar.slider('Glucose - Glikoz Değeri', 80.00, 199.00, 177.08)
     bloodpressure = st.sidebar.slider('BloodPressure - Kan Basıncı', -1.00, 123.00, 0.00)
     skinthickness = st.sidebar.slider('SkinThickness - Cilt Kalınlığı', 0.00, 99.00, 0.00)
     insulin = st.sidebar.slider('Insulin - Insulin Değeri', 0.00, 846.00, 800.00)
     bmi = st.sidebar.slider('BMI (Body Mas Indexi) - Vücut Kitle Indexi', 18.00, 67.10, 18.00)
     dpf = st.sidebar.slider('DiabetesPedigreeFunction - Soydaki Kişilerin Diyabet Olma İhtimalini Hesaplayan Fonksiyon', 0.078, 2.42, 0.00)
-    age = st.sidebar.slider('Age - Yaş', 21.00, 81.00, 21.00)
+    age = st.sidebar.slider('Age - Yaş', 21, 81, 60)
 
     data = {'Pregnancies': pregnancies,
             'Glucose': glucose,
@@ -97,15 +97,10 @@ st.subheader('Prediction')
 
 
 
-if st.button('Click for Predict') and new_model.predict(X_sample)[0] == 0:
-    if new_model.predict(X_sample)[0] == 0:
-        st.write("Do Not Have Diabetes")
-    else:
-        st.write("Have Diabetes")
+if new_model.predict(X_sample)[0] == 0:
+    st.write("Do Not Have Diabetes")
 else:
-    st.write('For the prediction, please click the button that says **Click for Predict**.')
-
-
+    st.write("Have Diabetes")
 
 
 st.write("""
