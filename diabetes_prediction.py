@@ -1,7 +1,3 @@
-################################################
-# End-to-End Diabetes Machine Learning Pipeline III
-################################################
-
 ##############################################################
 # Kütüphanelerin Import Edilmesi
 ##############################################################
@@ -105,14 +101,7 @@ new_model.predict(X_sample)
 
 st.subheader('Prediction')
 
-"""
-if new_model.predict(X_sample)[0] == 0:
-    print("Do Not Have Diabetes")
-    st.write("Do Not Have Diabetes")
-else:
-    print("Have Diabetes")
-    st.write("Have Diabetes")
-"""
+
 
 if st.button('Click for Predict') and new_model.predict(X_sample)[0] == 0:
     if new_model.predict(X_sample)[0] == 0:
